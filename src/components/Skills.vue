@@ -1,10 +1,16 @@
 <template>
   <div class="hello">
+    <!--
     <h1>{{ name }}</h1>
     
     {{ btnState ? 'The button is disabled' : 'The button is active'}}
 
     <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
+    -->
+
+    <ul>
+      <li v-for="(data, index) in skills" :key="index"> {{ index }}. {{ data.skill }}</li>
+    </ul>
   </div>
 </template>
 
@@ -14,7 +20,16 @@ export default {
   data() {
     return {
       name: 'Coursetro',
-      btnState: true
+      btnState: true,
+      skills: [
+        { "skill" : "Vue.js" },
+        { "skill" : "Front End Developer" },
+      ]
+    }
+  },
+  methods: {
+    changeName: function() {
+
     }
   }
 }
