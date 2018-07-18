@@ -7,8 +7,11 @@
 
     <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
     -->
-    <input type="text" placeholder="Enter a skill you have.." v-model="skill">
-    {{ skill }}
+
+    <form @submit.prevent="addSkill">
+      <input type="text" placeholder="Enter a skill you have.." v-model="skill">
+    </form>
+    
     <ul>
       <li v-for="(data, index) in skills" :key="index"> {{ index }}. {{ data.skill }}</li>
     </ul>
@@ -61,6 +64,10 @@ export default {
   methods: {
     changeName: function() {
 
+    },
+    addSkill(){
+      this.skills.push({skill: this.skill});
+      this.skill = '';
     }
   }
 }
