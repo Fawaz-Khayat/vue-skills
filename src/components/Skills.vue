@@ -12,7 +12,11 @@
       <li v-for="(data, index) in skills" :key="index"> {{ index }}. {{ data.skill }}</li>
     </ul>
     
-    <div v-bind:class="alertObject"></div>
+    <div v-bind:style="{ backgroundColor: bgColor, width: bgWidth, height: bgHeight }"></div>
+
+    <!-- class binding using object
+    <div v-bind:class="alertObject"></div> 
+    -->
     <!-- class binding
     <div  v-bind:class="{ alert: showAlert, 'another-class': showClass }"></div> 
     -->
@@ -37,6 +41,10 @@ export default {
         { "skill" : "Vue.js" },
         { "skill" : "Front End Developer" },
       ],
+      bgColor: 'yellow',
+      bgWidth: '100%',
+      bgHeight: '30px',
+      
       alertObject:{
         alert: true,
       },
