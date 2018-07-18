@@ -7,7 +7,8 @@
 
     <button v-on:click="changeName" v-bind:disabled="btnState">Change Name</button>
     -->
-
+    <input type="text" placeholder="Enter a skill you have.." v-model="skill">
+    {{ skill }}
     <ul>
       <li v-for="(data, index) in skills" :key="index"> {{ index }}. {{ data.skill }}</li>
     </ul>
@@ -36,10 +37,11 @@
 
 <script>
 export default {
-  name: 'Skills',
   data() {
     return {
-      name: 'Coursetro',
+      //name: 'Coursetro',
+      name: 'Skills',
+      skill: '',
       btnState: true,
       skills: [
         { "skill" : "Vue.js" },
@@ -96,6 +98,15 @@ export default {
 
   .container {
     box-shadow: 0px 0px 40px lightgray;
+  }
+
+    input {
+    width: calc(100% - 40px);
+    border: 0;
+    padding: 20px;
+    font-size: 1.3em;
+    background-color: #323333;
+    color: #687F7F;
   }
 
   /* Style binding
